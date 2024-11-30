@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>SnapSnapURL | Copy. Paste. Shorten.</title>
+        <meta content="SnapSnapURL - Simplify online sharing with our easy-to-use URL shortener. Shorten long links and share smarter with SnapSnapURL. Try it for free!" name="description">
+        <meta content="URL shortener short link links snapsnapurl shorten tool" name="keywords">
+        <meta name="robots" content="index">
+
+        <meta property="og:title" content="SnapSnap URL shortening">
+        <meta property="og:description" content="Check this out!">
+        <meta property="og:image" content="###"> <!-- TO REVIEW LATER-->
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="###"> <!-- TO REVIEW LATER-->
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+        <!-- TO REVIEW LATER-->
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <!-- Animations -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+
+        <!-- Styles -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <main>
+            <!-- ======= Navbar ======= -->
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-logo" href="{{ url_for('index') }}">
+                        <img id="logo" class="logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo SnapSnapURL">
+                    </a>
+                    <!-- Hamburger menu -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Navbar content -->
+                        <ul class="navbar-nav collapse navbar-collapse" id="navbar-buttons">
+                            <li class="nav-item btn">
+                                <a class="nav-link" href="{{ url_for('index') }}">HOME</a>
+                            </li>
+
+                            <li class="nav-item btn">
+                                <a class="nav-link click-scroll" href="#URL">URL</a>
+                            </li>
+
+                            <li class="nav-item btn">
+                                <a class="nav-link click-scroll" href="#GUIDE">GUIDE</a>
+                            </li>
+
+                            <li class="nav-item btn">
+                                <a class="nav-link click-scroll" href="#ABOUT">ABOUT</a>
+                            </li>
+                        </ul>
+                        <!-- Socials -->
+                        <div class="d-flex d-lg-block">
+                            <ul class="nav col d-flex justify-content-center pb-3 my-2 mx-auto">
+                                <li class="nav-item">
+                                    <a href="https://www.facebook.com/" target="_blank" class="nav-link px-2">
+                                        <img  class="social-icon" src="{{ url_for('static', filename='img/facebook.png') }}" style="width: 40px; height:auto" alt="Facebook link">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.instagram.com/#" target="_blank" class="nav-link px-2">
+                                        <img class="social-icon" src="{{ url_for('static', filename='img/instagram.png') }}" style="width: 40px; height:auto" alt="Instagram link">
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.youtube.com/" target="_blank" class="nav-link px-2">
+                                        <img class="social-icon" src="{{ url_for('static', filename='img/youtube.png') }}" style="width: 40px; height:auto" alt="YouTube link">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <li class="nav-item">
+                </div>
+            </nav>
+
+            <!-- Sections -->
+
+            <!-- URL Shortening -->
+            <section id="URL" class="url-section mt-5 pt-5 d-flex justify-content-center align-items-center">
+                <div class="container" style="margin-top: 12%;">
+                    <div class="row">
+                        <div class="col-md-8 col-12 mx-auto">
+                            <h1 class="text-white text-center mb-5">Copy. Paste. Shorten.</h1>
+                            <form class="form-box mt-5 pt-2" method="POST" action="/" >
+                                <div class="input-container" style="margin-top: 6%;">
+                                    <input id="url-input" name="url-input" type="text" class="input-box form-control" placeholder="Enter URL to shorten:" aria-label="URL" required>
+                                    <button type="submit" class="btn-shorten">SHORTEN</button>
+                                </div>
+                            </form>
+                            {% if short_url %}
+                                <p class="short-url-display">Your shortened URL: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- GUIDE Shortening -->
+            <section id="GUIDE" class="url-section d-flex justify-content-center align-items-center">
+                <div class="container" style="margin-top: 5%;">
+                    <div class="row mt-5 pt-5">
+                        <div class="col-12">
+                            <h2 class="text-center mb-5">Still not sure how it works?</h2>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div class="guide-card text-center">
+                                        <h3>Copy</h3>
+                                        <h6>To copy a URL, open the desired website, then highlight the address in the browser bar, right-click, and select "Copy." 
+                                            Alternatively, you can use the keyboard shortcut Ctrl+C on Windows or Cmd+C on Mac after highlighting the address.</h6>
+                                        <div class="guide-icon">
+                                            <i class="bi bi-clipboard guide-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div class="guide-card fs-1 text-center">
+                                        <h3>Paste</h3>
+                                        <h6>To paste the copied link into a field on the SnapSnapURL page, click in the text field, then right-click in the field and 
+                                            select "Paste." You can also use the shortcut Ctrl+V for Windows or Cmd+V for Mac.</h6>
+                                        <div class="guide-icon">
+                                            <i class="bi bi-check-lg guide-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                                    <div class="guide-card text-center">
+                                        <h3>Shorten</h3>
+                                        <h6>To shorten the link, click the Shorten button next to the text box. The page will generate a shortened link – click it to 
+                                            be taken to the original URL.</h6>
+                                        <div class="guide-icon">
+                                            <i class="bi bi-hand-index guide-icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ABOUT" class="url-section d-flex justify-content-center align-items-center">
+                <div class="container" style="margin-top: 5%;"> 
+                    <div class="outline"> 
+                        <div class="content">
+                            <div class="about-title mb-5">
+                                <h2>What about us?</h2> 
+                            </div>
+                            <div class="about-text">
+                                <h6>SnapSnapURL is a modern and innovative web platform designed to simplify the way you share and manage links. Founded in 2024 by 
+                                    a group of tech enthusiasts passionate about creating efficient digital tools, SnapSnapURL quickly grew from a small startup into 
+                                    a trusted name in the tech industry. The platform offers users the ability to shorten long URLs, making them easier to share on 
+                                    social media, messaging apps, or in professional communications. Businesses, content creators, and individuals rely on SnapSnapURL 
+                                    for seamless and efficient link management.</h6> <br>
+                                <h6>The company’s history reflects its commitment to accessibility and innovation. What started as a weekend project between friends 
+                                    in a garage has blossomed into a global platform used by many. The founders of SnapSnapURL believe in using technology to simplify 
+                                    life, and this philosophy is reflected in their services. Additionally, SnapSnapURL is deeply committed to giving back to the community. 
+                                    Each year, the company donates a portion of its revenue to digital education programs, ensuring that disadvantaged communities have 
+                                    access to the skills and tools they need to thrive in the digital age. SnapSnapURL also partners with environmental organizations, 
+                                    pledging to offset its carbon footprint and promote sustainable technology practices. This commitment to social responsibility has 
+                                    cemented its reputation not only as a reliable service, but as a force for good in the tech world.</h6>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section>
+
+        </main>
+        
+
+        <footer >
+            <div id="FOOTER" class="footer" style="margin-top: 10%;"> 
+                <div class="row"> 
+                    <div class="footer-item contact col-md-4"> 
+                        <h4>Contact us</h4> 
+                        <h5>contact@snapsnapurl.co.uk</h5> 
+                        <h5>60 Broad St<br>Lyme Regis<br>Dorset<br>DT7 3QF<br>United Kingdom</h5> 
+                    </div> 
+                    <div class="footer-item law col-md-4"> 
+                        <h4>Links</h4> 
+                        <a href="{{ url_for('privacy_policy') }}" target="_blank">Privacy Policy</a><br>
+                        <a href="{{ url_for('terms_of_use') }}" target="_blank">Terms of Use</a> 
+                    </div> 
+                    <div class="footer-item socials col-md-4" style="margin-bottom: 10%;"> 
+                        <h4>Our socials</h4> 
+                        <div class="footer-social-icons">
+                            <a href="https://www.facebook.com/" target="_blank" class="nav-link px-2">
+                                <img  class="social-icon" src="{{ url_for('static', filename='img/facebook.png') }}" style="width: 40px; height:auto" alt="Facebook link">
+                            </a> 
+                            <a href="https://www.instagram.com/#" target="_blank" class="nav-link px-2">
+                                <img class="social-icon" src="{{ url_for('static', filename='img/instagram.png') }}" style="width: 40px; height:auto" alt="Instagram link">
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" class="nav-link px-2">
+                                <img class="social-icon" src="{{ url_for('static', filename='img/youtube.png') }}" style="width: 40px; height:auto" alt="YouTube link">
+                            </a>
+                        </div> 
+                    </div> 
+                </div> 
+                <p class="copyright">&copy; 2024 40583031</p> 
+            </div> 
+        </footer>
+        
+    </body>
+</html>
