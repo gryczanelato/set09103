@@ -1,30 +1,3 @@
-/* Font */
-
-.roboto-light {
-font-family: "Roboto", sans-serif;
-font-weight: 300;
-font-style: normal;
-}
-
-.roboto-regular {
-font-family: "Roboto", sans-serif;
-font-family: var(--font-primary);
-font-size: 13px;
-font-weight: 400;
-}
-
-.roboto-medium {
-font-family: "Roboto", sans-serif;
-font-weight: 500;
-font-style: normal;
-}
-
-.roboto-bold {
-font-family: "Roboto", sans-serif;
-font-weight: 700;
-font-style: normal;
-}
-
 /* Colours and fonts */
 
 :root {
@@ -132,7 +105,10 @@ font-style: normal;
     }
 }
 
-/* General styles */
+/* ______________________
+    General styles
+______________________ */
+
 body {
     font-family: var(--font-default);
     color: var(--color-tertiary);
@@ -177,6 +153,7 @@ a:hover {
           NAVBAR 
 ______________________ */
 
+/* Desktop view */
 @media (min-width: 1280px) {
     .navbar {
         background-color: var(--color-tertiary);
@@ -258,6 +235,7 @@ ______________________ */
           URL 
 ______________________ */
 
+/* Desktop view */
 @media (min-width: 1280px) {
     #url {
         margin-top: 00px;
@@ -338,7 +316,7 @@ ______________________ */
     }
 }
 
-
+/* Mobile view */
 @media (max-width: 1279px) {
     #url {
         margin-top: 00px;
@@ -396,13 +374,13 @@ ______________________ */
         transform: scale(1.1);
         transition: all 1s ease-out;
     }
-    
 }
 
 /* ______________________
           GUIDE
 ______________________ */
 
+/* Desktop view */
 @media (min-width: 1280px) {
 
     #GUIDE {
@@ -440,6 +418,7 @@ ______________________ */
     }
 }
 
+/* Mobile view */
 @media (max-width: 1279px) {
 
     #GUIDE {
@@ -460,7 +439,7 @@ ______________________ */
     }
     
     .guide-card h3 {
-        margin-bottom: 15px; /* Space below heading */
+        margin-bottom: 15px;
     }
 
     .guide-icon {
@@ -472,7 +451,7 @@ ______________________ */
           ABOUT
 ______________________ */
 
-
+/* Desktop view */
 @media (min-width: 1280px) {
 
     #ABOUT { 
@@ -496,6 +475,7 @@ ______________________ */
     }
 }
 
+/* Mobile view */
 @media (max-width: 1279px) {
    
     #ABOUT { 
@@ -523,6 +503,7 @@ ______________________ */
           FOOTER
 ______________________ */
 
+/* Desktop view */
 @media (min-width: 1280px) {
     #FOOTER { 
         padding: 50px 0;
@@ -571,6 +552,7 @@ ______________________ */
     }
 }
 
+/* Mobile view */
 @media (max-width: 1279px) {
 
     .footer {

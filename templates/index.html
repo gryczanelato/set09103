@@ -11,28 +11,19 @@
 
         <meta property="og:title" content="SnapSnap URL shortening">
         <meta property="og:description" content="Check this out!">
-        <meta property="og:image" content="###"> <!-- TO REVIEW LATER-->
+        <meta property="og:image" content="SnapSnapURL is a fast and easy URL shortening service that lets you shorten long URLs for convenient sharing. With a user-friendly interface, you can quickly 
+        generate short links and copy them for later use. Learn more about how our service works, and access our privacy policy and terms of use on the website.">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" type="image/png" href="###"> <!-- TO REVIEW LATER-->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-
-        <!-- TO REVIEW LATER-->
         <!-- Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-
-        <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-        <!-- Animations -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-
 
         <!-- Styles -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -98,18 +89,20 @@
 
             <!-- Sections -->
 
-            <!-- URL Shortening -->
+            <!-- URL -->
             <section id="URL" class="url-section mt-5 pt-5 d-flex justify-content-center align-items-center">
                 <div class="container" style="margin-top: 12%;">
                     <div class="row">
                         <div class="col-md-8 col-12 mx-auto">
                             <h1 class="text-white text-center mb-5">Copy. Paste. Shorten.</h1>
+                            <!-- Input box -->
                             <form class="form-box mt-5 pt-2" method="POST" action="/" >
                                 <div class="input-container" style="margin-top: 6%;">
                                     <input id="url-input" name="url-input" type="text" class="input-box form-control" placeholder="Enter URL to shorten:" aria-label="URL" required>
                                     <button type="submit" class="btn-shorten">SHORTEN</button>
                                 </div>
                             </form>
+                            <!-- Shorten URL display -->
                             {% if short_url %}
                                 <p class="short-url-display">Your shortened URL: <a href="{{ short_url }}" target="_blank">{{ short_url }}</a></p>
                             {% endif %}
@@ -118,13 +111,14 @@
                 </div>
             </section>
         
-            <!-- GUIDE Shortening -->
+            <!-- GUIDE -->
             <section id="GUIDE" class="url-section d-flex justify-content-center align-items-center">
                 <div class="container" style="margin-top: 5%;">
                     <div class="row mt-5 pt-5">
                         <div class="col-12">
                             <h2 class="text-center mb-5">Still not sure how it works?</h2>
                             <div class="row">
+                                <!-- SInformational cards -->
                                 <div class="col-lg-4 col-md-6 col-12 mb-4">
                                     <div class="guide-card text-center">
                                         <h3>Copy</h3>
@@ -161,6 +155,7 @@
                 </div>
             </section>
 
+            <!-- ABOUT -->
             <section id="ABOUT" class="url-section d-flex justify-content-center align-items-center">
                 <div class="container" style="margin-top: 5%;"> 
                     <div class="outline"> 
@@ -189,20 +184,23 @@
 
         </main>
         
-
+        <!-- FOOTER -->
         <footer >
             <div id="FOOTER" class="footer" style="margin-top: 10%;"> 
                 <div class="row"> 
+                    <!-- Contact section -->
                     <div class="footer-item contact col-md-4"> 
                         <h4>Contact us</h4> 
                         <h5>contact@snapsnapurl.co.uk</h5> 
                         <h5>60 Broad St<br>Lyme Regis<br>Dorset<br>DT7 3QF<br>United Kingdom</h5> 
                     </div> 
+                    <!-- Links to PP and T&C -->
                     <div class="footer-item law col-md-4"> 
                         <h4>Links</h4> 
                         <a href="{{ url_for('privacy_policy') }}" target="_blank">Privacy Policy</a><br>
                         <a href="{{ url_for('terms_of_use') }}" target="_blank">Terms of Use</a> 
                     </div> 
+                    <!-- Links to socials -->
                     <div class="footer-item socials col-md-4" style="margin-bottom: 10%;"> 
                         <h4>Our socials</h4> 
                         <div class="footer-social-icons">
@@ -218,6 +216,7 @@
                         </div> 
                     </div> 
                 </div> 
+                <!-- Copyrights -->
                 <p class="copyright">&copy; 2024 40583031</p> 
             </div> 
         </footer>
